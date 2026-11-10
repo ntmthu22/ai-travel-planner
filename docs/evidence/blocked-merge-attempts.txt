@@ -1,0 +1,8 @@
+# merge attempt on https://github.com/ntmthu22/ai-travel-planner/pull/1 while red
+X Pull request ntmthu22/ai-travel-planner#1 is not mergeable: the base branch policy prohibits the merge.
+To have the pull request merged after all the requirements have been met, add the `--auto` flag.
+To use administrator privileges to immediately merge the pull request, add the `--admin` flag.
+# merge attempt on https://github.com/ntmthu22/ai-travel-planner/pull/2 while red
+X Pull request ntmthu22/ai-travel-planner#2 is not mergeable: the base branch policy prohibits the merge.
+To have the pull request merged after all the requirements have been met, add the `--auto` flag.
+To use administrator privileges to immediately merge the pull request, add the `--admin` flag.
