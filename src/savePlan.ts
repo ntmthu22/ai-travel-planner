@@ -39,7 +39,7 @@ export function savePlanHandler(store: Store) {
     const planId = String(req.params.planId);
     const plan = store.plans.get(planId);
     if (!plan || !plan.memberIds.includes(userId)) {
-      throw new ProblemError(404, "plan-not-found", "Plan not found", `No plan ${planId}.`);
+      throw new ProblemError(403, "not-plan-owner", "Forbidden", "Not allowed.");
     }
 
     // 3. Ownership: only the creator may save.
