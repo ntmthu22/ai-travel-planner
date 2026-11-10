@@ -32,9 +32,11 @@ all four checks are required.
 ## Secrets and model cost
 
 - Secrets live only in `.env` (gitignored). `.env.example` lists every variable without values.
-- Model: `gemini-2.5-flash` via Google AI Studio (free tier, no billing attached). The API key has a spending cap of **0 USD per
-  month**, set on the provider's dashboard. PA#2 makes no model calls; the per-plan cost is
-  measured in PA#3 and written here then.
+- Model: `gemini-2.5-flash` via Google AI Studio (free tier). No billing account is attached to
+  the Google project, so the API key cannot incur charges: the spending cap is **0 USD per
+  month**. If billing is ever attached, set a monthly budget on the provider's dashboard first
+  and update this line. PA#2 makes no model calls; the per-plan cost is measured in PA#3 and
+  written here then.
 - No key has ever been committed. `.env` is gitignored and `.claude/settings.json` denies the
   assistant read access to it.
 
