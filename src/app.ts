@@ -30,3 +30,5 @@ export function createApp(store: Store) {
 
   return app;
 }
+
+const unusedDemo = 1;
