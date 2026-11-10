@@ -5,7 +5,7 @@ Class project CSC13114 (23KTPM1). Team: Nguyễn Trần Minh Thư (22127403), Ho
 ## Setup
 
 ```bash
-git clone @@REPO_URL@@.git && cd ai-travel-planner
+git clone https://github.com/ntmthu22/ai-travel-planner.git && cd ai-travel-planner
 npm ci
 cp .env.example .env   # fill in values; never commit .env
 ```
@@ -32,7 +32,7 @@ all four checks are required.
 ## Secrets and model cost
 
 - Secrets live only in `.env` (gitignored). `.env.example` lists every variable without values.
-- Model: `@@MODEL@@` via @@PROVIDER@@. The API key has a spending cap of **@@CAP_USD@@ USD per
+- Model: `gemini-2.5-flash` via Google AI Studio (free tier, no billing attached). The API key has a spending cap of **0 USD per
   month**, set on the provider's dashboard. PA#2 makes no model calls; the per-plan cost is
   measured in PA#3 and written here then.
 - No key has ever been committed. `.env` is gitignored and `.claude/settings.json` denies the

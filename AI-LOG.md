@@ -18,7 +18,7 @@
 ## Entry 2: demo PRs (red to green, contract break)
 
 - **Tool:** Claude wrote the script; the PRs were opened by running it.
-- **Used for:** @@PR_RED@@ (lint error, blocked by the required `lint` check, fixed in @@RED_FIX@@) and
-  @@PR_BREAK@@ (contract break, 3 contract tests red, fixed in @@BREAK_FIX@@ without touching tests).
+- **Used for:** PR #1 (lint error, blocked by the required `lint` check, fixed in commit `0198c6a`) and
+  PR #2 (contract break, 3 contract tests red, fixed in commit `da72e30` without touching tests).
 - **Changed:** nothing in the tests or the contract in either PR; only the code.
 - **Rejected:** merging with the red check. The merge button was disabled until the fix commit.
