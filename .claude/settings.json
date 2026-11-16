@@ -19,7 +19,9 @@
       "Bash(git checkout:*)",
       "Bash(npm install:*)",
       "Edit(docs/contract/**)",
-      "Write(docs/contract/**)"
+      "Write(docs/contract/**)",
+      "Edit(./test/**)",
+      "Write(./test/**)"
     ],
     "deny": [
       "Read(./.env)",
