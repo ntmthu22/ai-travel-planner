@@ -118,3 +118,14 @@ export function setCapHandler(store: Store, userOf: (req: Request) => string) {
     res.json({ userId, cap });
   };
 }
+
+/** GET /groups: the groups the caller belongs to (no invite token here). */
+export function listGroupsHandler(store: Store, userOf: (req: Request) => string) {
+  return (req: Request, res: Response): void => {
+    const userId = userOf(req);
+    const groups = [...store.groups.values()]
+      .filter((g) => g.memberIds.includes(userId))
+      .map((g) => ({ id: g.id, name: g.name, total: g.total, ownerId: g.ownerId }));
+    res.json({ groups });
+  };
+}

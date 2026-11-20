@@ -5,6 +5,7 @@ import { EMPTY_DATASET, type Dataset, type Holiday } from "./data.js";
 import {
   createGroupHandler,
   getGroupHandler,
+  listGroupsHandler,
   joinGroupHandler,
   setCapHandler,
   setTotalHandler,
@@ -68,6 +69,7 @@ export function createApp(store: Store, overrides: Partial<Deps> = {}) {
   app.get("/places", wrap(searchHandler(deps.dataset)));
   app.get("/places/:id", wrap(placeHandler(deps.dataset)));
 
+  app.get("/groups", wrap(listGroupsHandler(store, userOf)));
   app.post("/groups", wrap(createGroupHandler(store, userOf)));
   app.post("/groups/join", wrap(joinGroupHandler(store, userOf)));
   app.get("/groups/:id", wrap(getGroupHandler(store, userOf)));
