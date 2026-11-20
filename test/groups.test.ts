@@ -202,3 +202,27 @@ describe("the group total", () => {
     expect(api.store.groups.get(g.id)?.total).toBe(5_000_000);
   });
 });
+
+describe("listing my groups", () => {
+  it("lists only the groups the caller belongs to, oldest first, without the invite token", async () => {
+    const api = mkApi();
+    const first = await mkGroup(api); // linh, an, binh
+    const second = await api.as("an").post("/groups", { name: "Other", total: 5 });
+    const mine = await api.as("an").get("/groups");
+    expect(mine.status).toBe(200);
+    expect(mine.body.groups.map((g: { id: string }) => g.id)).toEqual([first.id, second.body.id]);
+    expect(mine.body.groups[0]).toEqual({
+      id: first.id,
+      name: "Trip",
+      total: 2_000_000,
+      ownerId: "linh",
+    });
+    expect(JSON.stringify(mine.body)).not.toContain(first.token);
+    expect((await api.as("linh").get("/groups")).body.groups).toHaveLength(1);
+    expect((await api.as("stranger").get("/groups")).body.groups).toEqual([]);
+  });
+
+  it("needs sign-in", async () => {
+    problem(await mkApi().as(null).get("/groups"), 401, "unauthenticated");
+  });
+});
