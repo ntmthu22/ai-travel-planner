@@ -18,6 +18,7 @@ import {
   putStopsHandler,
 } from "./plans.js";
 import { placeHandler, searchHandler } from "./placesApi.js";
+import { getMeHandler, putInterestsHandler } from "./profile.js";
 import { ProblemError, sendProblem } from "./problem.js";
 import { savePlanHandler } from "./savePlan.js";
 import type { Store } from "./store.js";
@@ -60,6 +61,9 @@ export function createApp(store: Store, overrides: Partial<Deps> = {}) {
   app.use(express.json({ limit: "100kb" }));
 
   app.post("/auth/login", wrap(loginHandler(store)));
+
+  app.get("/me", wrap(getMeHandler(store, userOf)));
+  app.put("/me/interests", wrap(putInterestsHandler(store, userOf)));
 
   app.get("/places", wrap(searchHandler(deps.dataset)));
   app.get("/places/:id", wrap(placeHandler(deps.dataset)));
