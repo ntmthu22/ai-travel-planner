@@ -9,10 +9,21 @@ const setup = (over = {}) => {
   const ctx = mkToolCtx(over);
   return { ctx, tools: createTools(ctx) };
 };
+interface Res {
+  members: { ref: string; interests: string[]; cap: number | null }[];
+  places: { id: string }[];
+  menu: { id: string }[];
+  perMember: Record<string, number>;
+  total: number;
+  minutes: number;
+  available: boolean;
+  hourly: { hour: number; precipProb: number }[];
+  holidays: { date: string; name: string }[];
+}
 const ok = async (tools: ReturnType<typeof createTools>, name: string, args: unknown) => {
   const r = await callTool(tools, name, args);
   if (!r.ok) throw new Error(`expected ok, got: ${r.error}`);
-  return r.result as Record<string, any>;
+  return r.result as Res;
 };
 
 describe("the seven tools", () => {
@@ -62,9 +73,9 @@ describe("the user and the group come from the session (R1)", () => {
 describe("get_profile: members are refs, never names or emails", () => {
   it("returns m1..m3 with interests and caps and nothing else that identifies a person", async () => {
     const r = await ok(setup().tools, "get_profile", {});
-    expect(r.members.map((m: any) => m.ref)).toEqual(["m1", "m2", "m3"]);
+    expect(r.members.map((m) => m.ref)).toEqual(["m1", "m2", "m3"]);
     expect(r.members[0]).toEqual({ ref: "m1", interests: ["coffee", "museums"], cap: 500_000 });
-    expect(r.members[2].cap).toBeNull();
+    expect(r.members[2]?.cap).toBeNull();
     const text = JSON.stringify(r);
     expect(text).not.toContain("@");
     expect(text).not.toMatch(/"(an|linh|binh)"/);
@@ -93,7 +104,7 @@ describe("search_places and get_place: candidates only (P4)", () => {
   it("never returns a place with no hours, no ticket price or no menu", async () => {
     const { tools } = setup();
     const r = await ok(tools, "search_places", {});
-    const ids = r.places.map((p: any) => p.id);
+    const ids = r.places.map((p) => p.id);
     expect(ids).toContain("park");
     for (const bad of ["nohours", "noticket", "nomenu"]) expect(ids).not.toContain(bad);
   });
@@ -101,7 +112,7 @@ describe("search_places and get_place: candidates only (P4)", () => {
   it("filters by day and time over every period", async () => {
     const { tools } = setup();
     const r = await ok(tools, "search_places", { day: "mon", time: "12:00" });
-    expect(r.places.map((p: any) => p.id)).not.toContain("cafe");
+    expect(r.places.map((p) => p.id)).not.toContain("cafe");
   });
 
   it("refuses a time without a day, and bad values", async () => {
@@ -114,7 +125,7 @@ describe("search_places and get_place: candidates only (P4)", () => {
   it("get_place gives the menu of a candidate and refuses a non-candidate", async () => {
     const { tools } = setup();
     const r = await ok(tools, "get_place", { placeId: "restaurant" });
-    expect(r.menu.map((m: any) => m.id)).toEqual(["rest_a", "rest_b"]);
+    expect(r.menu.map((m) => m.id)).toEqual(["rest_a", "rest_b"]);
     expect((await callTool(tools, "get_place", { placeId: "nomenu" })).ok).toBe(false);
     expect((await callTool(tools, "get_place", { placeId: "atlantis" })).ok).toBe(false);
   });
