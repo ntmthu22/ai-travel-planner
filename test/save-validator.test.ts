@@ -87,7 +87,7 @@ describe("Save refuses what the agent could not have, with the rule named", () =
     ] as const) {
       const api = mkApi();
       const { g, planId } = await draft(api);
-      await edit(api, planId, stops as unknown[]);
+      await edit(api, planId, stops as unknown as unknown[]);
       await expectRefused(api, g, planId, "V1", code);
     }
   });

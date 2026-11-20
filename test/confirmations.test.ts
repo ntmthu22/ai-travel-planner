@@ -164,7 +164,7 @@ describe("first confirmation: pin and remove", () => {
     const g = await mkGroup(api);
     const prop = await propose(api, g.id);
     const closed = final({
-      stops: [stop("p1", "09:00", "10:00"), stop("closed", "11:00", "12:00")],
+      stops: [stop("p1", "09:00", "10:00"), stop("closed", "11:00", "12:00", [])],
     });
     api.models.push(new FakeModel([closed, closed, closed]));
     const res = await api
