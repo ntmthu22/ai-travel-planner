@@ -192,7 +192,7 @@ describe("main: the command line", () => {
       { env: { OTHER: "KEY-SECRET" }, log: () => {}, error: (m) => errors.push(m) },
     );
     expect(code).toBe(2);
-    expect(errors.join("\n")).toContain("GEMINI_API_KEY");
+    expect(errors.join("\n")).toContain("MODEL_API_KEY");
     expect(errors.join("\n")).not.toContain("KEY-SECRET");
   });
 });
