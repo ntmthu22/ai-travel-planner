@@ -22,18 +22,10 @@ function parseBody(raw: unknown): SaveBody {
 }
 
 /** POST /plans/:planId/save. See docs/contract/save-plan.md. */
-export function savePlanHandler(store: Store) {
+export function savePlanHandler(store: Store, userOf: (req: Request) => string) {
   return (req: Request, res: Response): void => {
-    // 1. Authentication (stub: X-User-Id header; replaced by real auth later)
-    const userId = req.header("X-User-Id");
-    if (!userId) {
-      throw new ProblemError(
-        401,
-        "unauthenticated",
-        "Authentication required",
-        "Missing X-User-Id.",
-      );
-    }
+    // 1. Authentication (bearer token, or the development X-User-Id stub)
+    const userId = userOf(req);
 
     // 2. Plan existence and membership. Non-members get 404 so a plan's existence is not leaked.
     const planId = String(req.params.planId);
