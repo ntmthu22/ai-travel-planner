@@ -4,7 +4,7 @@ import { pathToFileURL } from "node:url";
 import { runAgent, type AgentResult, type Model, type Usage, type Warning } from "./agent.js";
 import { computeCost } from "./cost.js";
 import { loadDataset, loadHolidays, loadWeather, type Forecast, type Holiday } from "./data.js";
-import { GeminiModel } from "./gemini.js";
+import { modelFromEnv } from "./config.js";
 import type { Stop } from "./schedule.js";
 import { scheduleTask, shortlistTask, type AgentRequest } from "./tasks.js";
 import { createTools, type ToolContext } from "./tools.js";
@@ -274,26 +274,32 @@ export async function main(argv: string[], io: Io): Promise<number> {
     );
     return 2;
   }
-  const key = io.env.GEMINI_API_KEY;
-  if (!key) {
+  let modelFactory;
+  try {
+    modelFactory = modelFromEnv(io.env);
+  } catch (e) {
+    io.error(e instanceof Error ? e.message : "bad model settings");
+    return 2;
+  }
+  if (!modelFactory) {
     io.error(
-      "GEMINI_API_KEY is not set. Put it in .env (never in git) and run with --env-file=.env.",
+      "MODEL_API_KEY is not set. Put it in .env (never in git); `npm run agent` reads .env.",
     );
     return 2;
   }
-  const modelName = io.env.GEMINI_MODEL;
   try {
     const summary = await runBatch({
       dataDir: data as string,
       requestsFile: requests as string,
       outDir: out as string,
-      modelFactory: () =>
-        new GeminiModel({ apiKey: key, ...(modelName ? { model: modelName } : {}) }),
+      modelFactory,
     });
     io.log(JSON.stringify(summary, null, 2));
     return summary.failed > 0 ? 1 : 0;
   } catch (e) {
-    io.error(e instanceof Error ? e.message.replaceAll(key, "[key]") : "failed");
+    const key = io.env.MODEL_API_KEY;
+    const message = e instanceof Error ? e.message : "failed";
+    io.error(key ? message.replaceAll(key, "[key]") : message);
     return 1;
   }
 }
