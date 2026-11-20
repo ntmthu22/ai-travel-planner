@@ -59,5 +59,10 @@ agent stopped at a limit: the draft stays private and Save still runs the valida
 | V4   | `over_member_cap`, `over_group_total`             | a member spends more than the lowest cap in the group, or the group more than its total |
 | V5   | `rain_risk`                                       | an outdoor stop has an hour above 60% rain chance, inside the 7-day forecast            |
 
-Also `invalid_schedule` for stops that do not fit the schema, and, at confirmation, `pinned_missing`
-and `removed_present`. Refusal: `422 plan-violates-constraints` with `violations`.
+Also `invalid_schedule` for stops that do not fit the schema, and, at confirmation, `pinned_missing`,
+`removed_present` and `unconfirmed_place` (a place the user never confirmed). `warning.limit` may also be
+`model_error` when the model could not be reached (no provider detail is shown). Refusal: `422 plan-violates-constraints` with `violations`.
+
+## Change log
+
+- v1.1: added `unconfirmed_place` and the `model_error` warning (backward compatible, section 7 of save-plan.md).
