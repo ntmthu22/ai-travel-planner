@@ -9,6 +9,14 @@ import {
   setCapHandler,
   setTotalHandler,
 } from "./groups.js";
+import {
+  confirmProposalHandler,
+  createProposalHandler,
+  getPlanHandler,
+  getProposalHandler,
+  groupPlansHandler,
+  putStopsHandler,
+} from "./plans.js";
 import { placeHandler, searchHandler } from "./placesApi.js";
 import { ProblemError, sendProblem } from "./problem.js";
 import { savePlanHandler } from "./savePlan.js";
@@ -62,7 +70,13 @@ export function createApp(store: Store, overrides: Partial<Deps> = {}) {
   app.put("/groups/:id/total", wrap(setTotalHandler(store, userOf)));
   app.put("/groups/:id/members/:userId/cap", wrap(setCapHandler(store, userOf)));
 
-  app.post("/plans/:planId/save", wrap(savePlanHandler(store, userOf)));
+  app.post("/groups/:id/proposals", wrap(createProposalHandler(store, deps, userOf)));
+  app.get("/groups/:id/plans", wrap(groupPlansHandler(store, deps, userOf)));
+  app.get("/proposals/:id", wrap(getProposalHandler(store, deps, userOf)));
+  app.post("/proposals/:id/confirm", wrap(confirmProposalHandler(store, deps, userOf)));
+  app.get("/plans/:id", wrap(getPlanHandler(store, deps, userOf)));
+  app.put("/plans/:id/stops", wrap(putStopsHandler(store, deps, userOf)));
+  app.post("/plans/:planId/save", wrap(savePlanHandler(store, deps, userOf)));
 
   app.use((_req, _res, next) => {
     next(new ProblemError(404, "route-not-found", "Route not found", "No such route."));
