@@ -1,22 +1,19 @@
-# Self-assessment: PA#2
+# Self-assessment: PA#3
 
-| #   | Criterion                   | Max | Claimed | Evidence (file / commit / PR / CI run)                                                                                                                                    |
-| --- | --------------------------- | --- | ------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| 1   | Rules file                  | 15  | 10      | `CLAUDE.md`: four sections (stack, commands, conventions, never); the two traced "Never" lines point to PR #2 and PR #1, which were deliberate drills, not accidents      |
-| 2   | Permissions and secrets     | 10  | 9       | `.claude/settings.json` (allow/ask/deny), `.env.example`, README "Secrets and model cost" (free tier, no billing attached, so 0 USD cap)                                  |
-| 3   | One command for every check | 10  | 9       | README "Checks" table = `.github/workflows/ci.yml` commands; `npm run check`                                                                                              |
-| 4   | CI that blocks a merge      | 20  | 17      | `docs/evidence/branch-protection.json`; `docs/evidence/blocked-merge-attempts.txt` (merge refused while red); blocked PR #1; green commit `0198c6a`; CI run for tag `pa2` |
-| 5   | Contract of one endpoint    | 25  | 22      | `docs/contract/save-plan.md` (roles + ownership, field rules, RFC 9457 types, idempotency, change rules)                                                                  |
-| 6   | Contract tests that bite    | 15  | 12      | `test/save-plan.contract.test.ts` (22 tests); red run PR #2, fixed in code only (commit `da72e30`)                                                                        |
-| 7   | AI-LOG.md                   | 5   | 4       | `AI-LOG.md` entries 1 and 2                                                                                                                                               |
-|     | **Total**                   | 100 | **83**  |                                                                                                                                                                           |
+Claims are what the repository shows today. Items needing a deployment, a real run or a video are not claimed.
+
+| #   | Criterion                        | Max | Claimed | Evidence / what is missing                                                                                                     |
+| --- | -------------------------------- | --- | ------- | ------------------------------------------------------------------------------------------------------------------------------ |
+| 1   | Search + groups, deployed        | 20  | TO FILL | Code and tests exist (`src/search.ts`, `src/groups.ts`, `public/`). Not deployed yet: no URL, no accounts.                     |
+| 2   | Agent, 7 tools, limits           | 25  | TO FILL | Seven tools, limits in code, tests with a fake model. No real model run, so no measured per-plan cost in the README.           |
+| 3   | Two confirmations                | 15  | TO FILL | `test/confirmations.test.ts`; nothing reaches the group without Save.                                                          |
+| 4   | Validator V1 to V5               | 20  | TO FILL | 26 validator tests plus Save-time tests; V3 formula and the amount in V4 are assumptions.                                      |
+| 5   | Agent command + first eval       | 10  | TO FILL | Command and tests exist; the first run and the eval.mjs report are missing.                                                    |
+| 6   | Tests first, one part per commit | 5   | TO FILL | Red `test:` commits before `feat:` commits in `git log`. One exception: the agent-command contract was written after the code. |
+| 7   | AI-LOG.md                        | 5   | TO FILL | Entries 3 to 5; the team-review entry is still empty.                                                                          |
 
 ## What we did not manage
 
-- The validator is a stub (only the group total); the real rules arrive in PA#3.
-- Authentication is a development stub (`X-User-Id`).
-- The cost of one model plan is not measured yet (no model call exists before PA#3).
-- The two "Never" lines in `CLAUDE.md` are traced to PR #1 and PR #2, which were deliberate drills, not accidents.
-- `CLAUDE.md` lost its four main sections in the base commit; restored in a later PR. We claim fewer marks for criterion 1 because no "Never" line comes from a real accident.
-- Most of the history was produced on one day (10 Nov) by a script that opened the demo PRs; we claim fewer marks for criteria 4 and 6 for that reason.
-- There is no screenshot of the branch settings; the evidence is the API output in `docs/evidence/branch-protection.json`.
+- No deployment, no real model run, no eval report, no video.
+- File formats and tool names follow assumptions until the class brief and `travel-eval/` are read.
+- No rate limiting on sign-in.
