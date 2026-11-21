@@ -1,0 +1,1336 @@
+{
+  "version": "sample-placeholder-NOT-the-shared-set",
+  "places": [
+    {
+      "id": "s01",
+      "name": "Sample Cafe 1",
+      "type": "cafe",
+      "district": "D1",
+      "lat": 10.74,
+      "lng": 106.66,
+      "priceLevel": 1,
+      "ticketPrice": 0,
+      "hours": {
+        "mon": [
+          {
+            "open": "07:00",
+            "close": "11:00"
+          },
+          {
+            "open": "14:00",
+            "close": "22:00"
+          }
+        ],
+        "tue": [
+          {
+            "open": "07:00",
+            "close": "11:00"
+          },
+          {
+            "open": "14:00",
+            "close": "22:00"
+          }
+        ],
+        "wed": [
+          {
+            "open": "07:00",
+            "close": "11:00"
+          },
+          {
+            "open": "14:00",
+            "close": "22:00"
+          }
+        ],
+        "thu": [
+          {
+            "open": "07:00",
+            "close": "11:00"
+          },
+          {
+            "open": "14:00",
+            "close": "22:00"
+          }
+        ],
+        "fri": [
+          {
+            "open": "07:00",
+            "close": "11:00"
+          },
+          {
+            "open": "14:00",
+            "close": "22:00"
+          }
+        ],
+        "sat": [
+          {
+            "open": "07:00",
+            "close": "11:00"
+          },
+          {
+            "open": "14:00",
+            "close": "22:00"
+          }
+        ],
+        "sun": [
+          {
+            "open": "07:00",
+            "close": "11:00"
+          },
+          {
+            "open": "14:00",
+            "close": "22:00"
+          }
+        ]
+      },
+      "menu": [
+        {
+          "id": "s01_a",
+          "name": "Item A",
+          "price": 30000
+        },
+        {
+          "id": "s01_b",
+          "name": "Item B",
+          "price": 60000
+        }
+      ],
+      "outdoor": false,
+      "description": "Placeholder place. Not real data."
+    },
+    {
+      "id": "s02",
+      "name": "Sample Museum 1",
+      "type": "museum",
+      "district": "D3",
+      "lat": 10.744,
+      "lng": 106.663,
+      "priceLevel": 2,
+      "ticketPrice": 40000,
+      "hours": {
+        "tue": [
+          {
+            "open": "08:00",
+            "close": "17:00"
+          }
+        ],
+        "wed": [
+          {
+            "open": "08:00",
+            "close": "17:00"
+          }
+        ],
+        "thu": [
+          {
+            "open": "08:00",
+            "close": "17:00"
+          }
+        ],
+        "fri": [
+          {
+            "open": "08:00",
+            "close": "17:00"
+          }
+        ],
+        "sat": [
+          {
+            "open": "08:00",
+            "close": "17:00"
+          }
+        ],
+        "sun": [
+          {
+            "open": "08:00",
+            "close": "17:00"
+          }
+        ]
+      },
+      "menu": [
+        {
+          "id": "s02_a",
+          "name": "Item A",
+          "price": 31000
+        },
+        {
+          "id": "s02_b",
+          "name": "Item B",
+          "price": 61000
+        }
+      ],
+      "outdoor": false,
+      "description": "Placeholder place. Not real data."
+    },
+    {
+      "id": "s03",
+      "name": "Sample Park 1",
+      "type": "park",
+      "district": "D5",
+      "lat": 10.748,
+      "lng": 106.666,
+      "priceLevel": 1,
+      "ticketPrice": 0,
+      "hours": {
+        "mon": [
+          {
+            "open": "08:00",
+            "close": "21:00"
+          }
+        ],
+        "tue": [
+          {
+            "open": "08:00",
+            "close": "21:00"
+          }
+        ],
+        "wed": [
+          {
+            "open": "08:00",
+            "close": "21:00"
+          }
+        ],
+        "thu": [
+          {
+            "open": "08:00",
+            "close": "21:00"
+          }
+        ],
+        "fri": [
+          {
+            "open": "08:00",
+            "close": "21:00"
+          }
+        ],
+        "sat": [
+          {
+            "open": "08:00",
+            "close": "21:00"
+          }
+        ],
+        "sun": [
+          {
+            "open": "08:00",
+            "close": "21:00"
+          }
+        ]
+      },
+      "menu": [
+        {
+          "id": "s03_a",
+          "name": "Item A",
+          "price": 32000
+        },
+        {
+          "id": "s03_b",
+          "name": "Item B",
+          "price": 62000
+        }
+      ],
+      "outdoor": true,
+      "description": "Placeholder place. Not real data."
+    },
+    {
+      "id": "s04",
+      "name": "Sample Restaurant 1",
+      "type": "restaurant",
+      "district": "D7",
+      "lat": 10.752,
+      "lng": 106.669,
+      "priceLevel": 3,
+      "ticketPrice": 0,
+      "hours": {
+        "mon": [
+          {
+            "open": "08:00",
+            "close": "21:00"
+          }
+        ],
+        "tue": [
+          {
+            "open": "08:00",
+            "close": "21:00"
+          }
+        ],
+        "wed": [
+          {
+            "open": "08:00",
+            "close": "21:00"
+          }
+        ],
+        "thu": [
+          {
+            "open": "08:00",
+            "close": "21:00"
+          }
+        ],
+        "fri": [
+          {
+            "open": "08:00",
+            "close": "21:00"
+          }
+        ],
+        "sat": [
+          {
+            "open": "08:00",
+            "close": "21:00"
+          }
+        ],
+        "sun": [
+          {
+            "open": "08:00",
+            "close": "21:00"
+          }
+        ]
+      },
+      "menu": [
+        {
+          "id": "s04_a",
+          "name": "Item A",
+          "price": 33000
+        },
+        {
+          "id": "s04_b",
+          "name": "Item B",
+          "price": 63000
+        }
+      ],
+      "outdoor": false,
+      "description": "Placeholder place. Not real data."
+    },
+    {
+      "id": "s05",
+      "name": "Sample Market 1",
+      "type": "market",
+      "district": "D1",
+      "lat": 10.756,
+      "lng": 106.672,
+      "priceLevel": 1,
+      "ticketPrice": 0,
+      "hours": {
+        "mon": [
+          {
+            "open": "08:00",
+            "close": "21:00"
+          }
+        ],
+        "tue": [
+          {
+            "open": "08:00",
+            "close": "21:00"
+          }
+        ],
+        "wed": [
+          {
+            "open": "08:00",
+            "close": "21:00"
+          }
+        ],
+        "thu": [
+          {
+            "open": "08:00",
+            "close": "21:00"
+          }
+        ],
+        "fri": [
+          {
+            "open": "08:00",
+            "close": "21:00"
+          }
+        ],
+        "sat": [
+          {
+            "open": "08:00",
+            "close": "21:00"
+          }
+        ],
+        "sun": [
+          {
+            "open": "08:00",
+            "close": "21:00"
+          }
+        ]
+      },
+      "menu": [
+        {
+          "id": "s05_a",
+          "name": "Item A",
+          "price": 34000
+        },
+        {
+          "id": "s05_b",
+          "name": "Item B",
+          "price": 64000
+        }
+      ],
+      "outdoor": true,
+      "description": "Placeholder place. Not real data."
+    },
+    {
+      "id": "s06",
+      "name": "Sample Temple 1",
+      "type": "temple",
+      "district": "D3",
+      "lat": 10.76,
+      "lng": 106.675,
+      "priceLevel": 1,
+      "ticketPrice": 0,
+      "hours": {
+        "mon": [
+          {
+            "open": "08:00",
+            "close": "21:00"
+          }
+        ],
+        "tue": [
+          {
+            "open": "08:00",
+            "close": "21:00"
+          }
+        ],
+        "wed": [
+          {
+            "open": "08:00",
+            "close": "21:00"
+          }
+        ],
+        "thu": [
+          {
+            "open": "08:00",
+            "close": "21:00"
+          }
+        ],
+        "fri": [
+          {
+            "open": "08:00",
+            "close": "21:00"
+          }
+        ],
+        "sat": [
+          {
+            "open": "08:00",
+            "close": "21:00"
+          }
+        ],
+        "sun": [
+          {
+            "open": "08:00",
+            "close": "21:00"
+          }
+        ]
+      },
+      "menu": [
+        {
+          "id": "s06_a",
+          "name": "Item A",
+          "price": 35000
+        },
+        {
+          "id": "s06_b",
+          "name": "Item B",
+          "price": 65000
+        }
+      ],
+      "outdoor": true,
+      "description": "Placeholder place. Not real data."
+    },
+    {
+      "id": "s07",
+      "name": "Sample Cafe 2",
+      "type": "cafe",
+      "district": "D5",
+      "lat": 10.764,
+      "lng": 106.678,
+      "priceLevel": 1,
+      "ticketPrice": 0,
+      "hours": {
+        "mon": [
+          {
+            "open": "07:00",
+            "close": "11:00"
+          },
+          {
+            "open": "14:00",
+            "close": "22:00"
+          }
+        ],
+        "tue": [
+          {
+            "open": "07:00",
+            "close": "11:00"
+          },
+          {
+            "open": "14:00",
+            "close": "22:00"
+          }
+        ],
+        "wed": [
+          {
+            "open": "07:00",
+            "close": "11:00"
+          },
+          {
+            "open": "14:00",
+            "close": "22:00"
+          }
+        ],
+        "thu": [
+          {
+            "open": "07:00",
+            "close": "11:00"
+          },
+          {
+            "open": "14:00",
+            "close": "22:00"
+          }
+        ],
+        "fri": [
+          {
+            "open": "07:00",
+            "close": "11:00"
+          },
+          {
+            "open": "14:00",
+            "close": "22:00"
+          }
+        ],
+        "sat": [
+          {
+            "open": "07:00",
+            "close": "11:00"
+          },
+          {
+            "open": "14:00",
+            "close": "22:00"
+          }
+        ],
+        "sun": [
+          {
+            "open": "07:00",
+            "close": "11:00"
+          },
+          {
+            "open": "14:00",
+            "close": "22:00"
+          }
+        ]
+      },
+      "menu": [
+        {
+          "id": "s07_a",
+          "name": "Item A",
+          "price": 36000
+        },
+        {
+          "id": "s07_b",
+          "name": "Item B",
+          "price": 66000
+        }
+      ],
+      "outdoor": false,
+      "description": "Placeholder place. Not real data."
+    },
+    {
+      "id": "s08",
+      "name": "Sample Museum 2",
+      "type": "museum",
+      "district": "D7",
+      "lat": 10.768,
+      "lng": 106.681,
+      "priceLevel": 2,
+      "ticketPrice": 40000,
+      "hours": {
+        "tue": [
+          {
+            "open": "08:00",
+            "close": "17:00"
+          }
+        ],
+        "wed": [
+          {
+            "open": "08:00",
+            "close": "17:00"
+          }
+        ],
+        "thu": [
+          {
+            "open": "08:00",
+            "close": "17:00"
+          }
+        ],
+        "fri": [
+          {
+            "open": "08:00",
+            "close": "17:00"
+          }
+        ],
+        "sat": [
+          {
+            "open": "08:00",
+            "close": "17:00"
+          }
+        ],
+        "sun": [
+          {
+            "open": "08:00",
+            "close": "17:00"
+          }
+        ]
+      },
+      "menu": [
+        {
+          "id": "s08_a",
+          "name": "Item A",
+          "price": 37000
+        },
+        {
+          "id": "s08_b",
+          "name": "Item B",
+          "price": 67000
+        }
+      ],
+      "outdoor": false,
+      "description": "Placeholder place. Not real data."
+    },
+    {
+      "id": "s09",
+      "name": "Sample Park 2",
+      "type": "park",
+      "district": "D1",
+      "lat": 10.772,
+      "lng": 106.684,
+      "priceLevel": 1,
+      "ticketPrice": 0,
+      "hours": {
+        "mon": [
+          {
+            "open": "08:00",
+            "close": "21:00"
+          }
+        ],
+        "tue": [
+          {
+            "open": "08:00",
+            "close": "21:00"
+          }
+        ],
+        "wed": [
+          {
+            "open": "08:00",
+            "close": "21:00"
+          }
+        ],
+        "thu": [
+          {
+            "open": "08:00",
+            "close": "21:00"
+          }
+        ],
+        "fri": [
+          {
+            "open": "08:00",
+            "close": "21:00"
+          }
+        ],
+        "sat": [
+          {
+            "open": "08:00",
+            "close": "21:00"
+          }
+        ],
+        "sun": [
+          {
+            "open": "08:00",
+            "close": "21:00"
+          }
+        ]
+      },
+      "menu": [
+        {
+          "id": "s09_a",
+          "name": "Item A",
+          "price": 38000
+        },
+        {
+          "id": "s09_b",
+          "name": "Item B",
+          "price": 68000
+        }
+      ],
+      "outdoor": true,
+      "description": "Placeholder place. Not real data."
+    },
+    {
+      "id": "s10",
+      "name": "Sample Restaurant 2",
+      "type": "restaurant",
+      "district": "D3",
+      "lat": 10.776,
+      "lng": 106.687,
+      "priceLevel": 3,
+      "ticketPrice": 0,
+      "hours": {
+        "mon": [
+          {
+            "open": "08:00",
+            "close": "21:00"
+          }
+        ],
+        "tue": [
+          {
+            "open": "08:00",
+            "close": "21:00"
+          }
+        ],
+        "wed": [
+          {
+            "open": "08:00",
+            "close": "21:00"
+          }
+        ],
+        "thu": [
+          {
+            "open": "08:00",
+            "close": "21:00"
+          }
+        ],
+        "fri": [
+          {
+            "open": "08:00",
+            "close": "21:00"
+          }
+        ],
+        "sat": [
+          {
+            "open": "08:00",
+            "close": "21:00"
+          }
+        ],
+        "sun": [
+          {
+            "open": "08:00",
+            "close": "21:00"
+          }
+        ]
+      },
+      "menu": [
+        {
+          "id": "s10_a",
+          "name": "Item A",
+          "price": 39000
+        },
+        {
+          "id": "s10_b",
+          "name": "Item B",
+          "price": 69000
+        }
+      ],
+      "outdoor": false,
+      "description": "Placeholder place. Not real data."
+    },
+    {
+      "id": "s11",
+      "name": "Sample Market 2",
+      "type": "market",
+      "district": "D5",
+      "lat": 10.78,
+      "lng": 106.69,
+      "priceLevel": 1,
+      "ticketPrice": 0,
+      "hours": {
+        "mon": [
+          {
+            "open": "08:00",
+            "close": "21:00"
+          }
+        ],
+        "tue": [
+          {
+            "open": "08:00",
+            "close": "21:00"
+          }
+        ],
+        "wed": [
+          {
+            "open": "08:00",
+            "close": "21:00"
+          }
+        ],
+        "thu": [
+          {
+            "open": "08:00",
+            "close": "21:00"
+          }
+        ],
+        "fri": [
+          {
+            "open": "08:00",
+            "close": "21:00"
+          }
+        ],
+        "sat": [
+          {
+            "open": "08:00",
+            "close": "21:00"
+          }
+        ],
+        "sun": [
+          {
+            "open": "08:00",
+            "close": "21:00"
+          }
+        ]
+      },
+      "menu": [
+        {
+          "id": "s11_a",
+          "name": "Item A",
+          "price": 40000
+        },
+        {
+          "id": "s11_b",
+          "name": "Item B",
+          "price": 70000
+        }
+      ],
+      "outdoor": true,
+      "description": "Placeholder place. Not real data."
+    },
+    {
+      "id": "s12",
+      "name": "Sample Temple 2",
+      "type": "temple",
+      "district": "D7",
+      "lat": 10.784,
+      "lng": 106.693,
+      "priceLevel": 1,
+      "ticketPrice": 0,
+      "hours": {
+        "mon": [
+          {
+            "open": "08:00",
+            "close": "21:00"
+          }
+        ],
+        "tue": [
+          {
+            "open": "08:00",
+            "close": "21:00"
+          }
+        ],
+        "wed": [
+          {
+            "open": "08:00",
+            "close": "21:00"
+          }
+        ],
+        "thu": [
+          {
+            "open": "08:00",
+            "close": "21:00"
+          }
+        ],
+        "fri": [
+          {
+            "open": "08:00",
+            "close": "21:00"
+          }
+        ],
+        "sat": [
+          {
+            "open": "08:00",
+            "close": "21:00"
+          }
+        ],
+        "sun": [
+          {
+            "open": "08:00",
+            "close": "21:00"
+          }
+        ]
+      },
+      "menu": [
+        {
+          "id": "s12_a",
+          "name": "Item A",
+          "price": 41000
+        },
+        {
+          "id": "s12_b",
+          "name": "Item B",
+          "price": 71000
+        }
+      ],
+      "outdoor": true,
+      "description": "Placeholder place. Not real data."
+    },
+    {
+      "id": "s13",
+      "name": "Sample Cafe 3",
+      "type": "cafe",
+      "district": "D1",
+      "lat": 10.788,
+      "lng": 106.696,
+      "priceLevel": 1,
+      "ticketPrice": 0,
+      "hours": {
+        "mon": [
+          {
+            "open": "07:00",
+            "close": "11:00"
+          },
+          {
+            "open": "14:00",
+            "close": "22:00"
+          }
+        ],
+        "tue": [
+          {
+            "open": "07:00",
+            "close": "11:00"
+          },
+          {
+            "open": "14:00",
+            "close": "22:00"
+          }
+        ],
+        "wed": [
+          {
+            "open": "07:00",
+            "close": "11:00"
+          },
+          {
+            "open": "14:00",
+            "close": "22:00"
+          }
+        ],
+        "thu": [
+          {
+            "open": "07:00",
+            "close": "11:00"
+          },
+          {
+            "open": "14:00",
+            "close": "22:00"
+          }
+        ],
+        "fri": [
+          {
+            "open": "07:00",
+            "close": "11:00"
+          },
+          {
+            "open": "14:00",
+            "close": "22:00"
+          }
+        ],
+        "sat": [
+          {
+            "open": "07:00",
+            "close": "11:00"
+          },
+          {
+            "open": "14:00",
+            "close": "22:00"
+          }
+        ],
+        "sun": [
+          {
+            "open": "07:00",
+            "close": "11:00"
+          },
+          {
+            "open": "14:00",
+            "close": "22:00"
+          }
+        ]
+      },
+      "menu": [
+        {
+          "id": "s13_a",
+          "name": "Item A",
+          "price": 42000
+        },
+        {
+          "id": "s13_b",
+          "name": "Item B",
+          "price": 72000
+        }
+      ],
+      "outdoor": false,
+      "description": "Placeholder place. Not real data."
+    },
+    {
+      "id": "s14",
+      "name": "Sample Museum 3",
+      "type": "museum",
+      "district": "D3",
+      "lat": 10.792,
+      "lng": 106.699,
+      "priceLevel": 2,
+      "ticketPrice": 40000,
+      "hours": {
+        "tue": [
+          {
+            "open": "08:00",
+            "close": "17:00"
+          }
+        ],
+        "wed": [
+          {
+            "open": "08:00",
+            "close": "17:00"
+          }
+        ],
+        "thu": [
+          {
+            "open": "08:00",
+            "close": "17:00"
+          }
+        ],
+        "fri": [
+          {
+            "open": "08:00",
+            "close": "17:00"
+          }
+        ],
+        "sat": [
+          {
+            "open": "08:00",
+            "close": "17:00"
+          }
+        ],
+        "sun": [
+          {
+            "open": "08:00",
+            "close": "17:00"
+          }
+        ]
+      },
+      "menu": [
+        {
+          "id": "s14_a",
+          "name": "Item A",
+          "price": 43000
+        },
+        {
+          "id": "s14_b",
+          "name": "Item B",
+          "price": 73000
+        }
+      ],
+      "outdoor": false,
+      "description": "Placeholder place. Not real data."
+    },
+    {
+      "id": "s15",
+      "name": "Sample Park 3",
+      "type": "park",
+      "district": "D5",
+      "lat": 10.796,
+      "lng": 106.702,
+      "priceLevel": 1,
+      "ticketPrice": 0,
+      "hours": {
+        "mon": [
+          {
+            "open": "08:00",
+            "close": "21:00"
+          }
+        ],
+        "tue": [
+          {
+            "open": "08:00",
+            "close": "21:00"
+          }
+        ],
+        "wed": [
+          {
+            "open": "08:00",
+            "close": "21:00"
+          }
+        ],
+        "thu": [
+          {
+            "open": "08:00",
+            "close": "21:00"
+          }
+        ],
+        "fri": [
+          {
+            "open": "08:00",
+            "close": "21:00"
+          }
+        ],
+        "sat": [
+          {
+            "open": "08:00",
+            "close": "21:00"
+          }
+        ],
+        "sun": [
+          {
+            "open": "08:00",
+            "close": "21:00"
+          }
+        ]
+      },
+      "menu": [
+        {
+          "id": "s15_a",
+          "name": "Item A",
+          "price": 44000
+        },
+        {
+          "id": "s15_b",
+          "name": "Item B",
+          "price": 74000
+        }
+      ],
+      "outdoor": true,
+      "description": "Placeholder place. Not real data."
+    },
+    {
+      "id": "s16",
+      "name": "Sample Restaurant 3",
+      "type": "restaurant",
+      "district": "D7",
+      "lat": 10.8,
+      "lng": 106.705,
+      "priceLevel": 3,
+      "ticketPrice": 0,
+      "hours": {
+        "mon": [
+          {
+            "open": "08:00",
+            "close": "21:00"
+          }
+        ],
+        "tue": [
+          {
+            "open": "08:00",
+            "close": "21:00"
+          }
+        ],
+        "wed": [
+          {
+            "open": "08:00",
+            "close": "21:00"
+          }
+        ],
+        "thu": [
+          {
+            "open": "08:00",
+            "close": "21:00"
+          }
+        ],
+        "fri": [
+          {
+            "open": "08:00",
+            "close": "21:00"
+          }
+        ],
+        "sat": [
+          {
+            "open": "08:00",
+            "close": "21:00"
+          }
+        ],
+        "sun": [
+          {
+            "open": "08:00",
+            "close": "21:00"
+          }
+        ]
+      },
+      "menu": [
+        {
+          "id": "s16_a",
+          "name": "Item A",
+          "price": 45000
+        },
+        {
+          "id": "s16_b",
+          "name": "Item B",
+          "price": 75000
+        }
+      ],
+      "outdoor": false,
+      "description": "Placeholder place. Not real data."
+    },
+    {
+      "id": "s17",
+      "name": "Sample Market 3",
+      "type": "market",
+      "district": "D1",
+      "lat": 10.804,
+      "lng": 106.708,
+      "priceLevel": 1,
+      "ticketPrice": 0,
+      "hours": {
+        "mon": [
+          {
+            "open": "08:00",
+            "close": "21:00"
+          }
+        ],
+        "tue": [
+          {
+            "open": "08:00",
+            "close": "21:00"
+          }
+        ],
+        "wed": [
+          {
+            "open": "08:00",
+            "close": "21:00"
+          }
+        ],
+        "thu": [
+          {
+            "open": "08:00",
+            "close": "21:00"
+          }
+        ],
+        "fri": [
+          {
+            "open": "08:00",
+            "close": "21:00"
+          }
+        ],
+        "sat": [
+          {
+            "open": "08:00",
+            "close": "21:00"
+          }
+        ],
+        "sun": [
+          {
+            "open": "08:00",
+            "close": "21:00"
+          }
+        ]
+      },
+      "menu": [
+        {
+          "id": "s17_a",
+          "name": "Item A",
+          "price": 46000
+        },
+        {
+          "id": "s17_b",
+          "name": "Item B",
+          "price": 76000
+        }
+      ],
+      "outdoor": true,
+      "description": "Placeholder place. Not real data."
+    },
+    {
+      "id": "s18",
+      "name": "Sample Temple 3",
+      "type": "temple",
+      "district": "D3",
+      "lat": 10.808,
+      "lng": 106.711,
+      "priceLevel": 1,
+      "ticketPrice": 0,
+      "hours": {
+        "mon": [
+          {
+            "open": "08:00",
+            "close": "21:00"
+          }
+        ],
+        "tue": [
+          {
+            "open": "08:00",
+            "close": "21:00"
+          }
+        ],
+        "wed": [
+          {
+            "open": "08:00",
+            "close": "21:00"
+          }
+        ],
+        "thu": [
+          {
+            "open": "08:00",
+            "close": "21:00"
+          }
+        ],
+        "fri": [
+          {
+            "open": "08:00",
+            "close": "21:00"
+          }
+        ],
+        "sat": [
+          {
+            "open": "08:00",
+            "close": "21:00"
+          }
+        ],
+        "sun": [
+          {
+            "open": "08:00",
+            "close": "21:00"
+          }
+        ]
+      },
+      "menu": [
+        {
+          "id": "s18_a",
+          "name": "Item A",
+          "price": 47000
+        },
+        {
+          "id": "s18_b",
+          "name": "Item B",
+          "price": 77000
+        }
+      ],
+      "outdoor": true,
+      "description": "Placeholder place. Not real data."
+    },
+    {
+      "id": "s90",
+      "name": "Sample No Hours",
+      "type": "cafe",
+      "district": "D1",
+      "lat": 10.77,
+      "lng": 106.7,
+      "priceLevel": 1,
+      "ticketPrice": 0,
+      "hours": null,
+      "menu": [
+        {
+          "id": "s90_a",
+          "name": "Item",
+          "price": 1
+        }
+      ],
+      "outdoor": false,
+      "description": "Placeholder: no hours."
+    },
+    {
+      "id": "s91",
+      "name": "Sample No Menu",
+      "type": "cafe",
+      "district": "D1",
+      "lat": 10.77,
+      "lng": 106.7,
+      "priceLevel": 1,
+      "ticketPrice": 0,
+      "hours": {
+        "mon": [
+          {
+            "open": "08:00",
+            "close": "20:00"
+          }
+        ]
+      },
+      "menu": null,
+      "outdoor": false,
+      "description": "Placeholder: no menu."
+    }
+  ]
+}

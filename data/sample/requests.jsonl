@@ -1,0 +1,2 @@
+{"id": "r1", "date": "2026-12-10", "groupTotal": 1500000, "preferences": ["coffee", "quiet places"], "members": [{"id": "u1", "interests": ["coffee", "museums"], "cap": 400000}, {"id": "u2", "interests": ["parks"], "cap": null}, {"id": "u3", "interests": ["street food"], "cap": 250000}]}
+{"id": "r2", "date": "2026-12-12", "groupTotal": 900000, "preferences": ["outdoors"], "members": [{"id": "u1", "interests": ["parks", "temples"], "cap": null}, {"id": "u2", "interests": ["markets"], "cap": 300000}]}

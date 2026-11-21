@@ -1,8 +1,10 @@
 import { createHash } from "node:crypto";
 import type { Request, Response } from "express";
+import type { Deps } from "./app.js";
+import { validationContext } from "./plans.js";
 import { ProblemError } from "./problem.js";
-import type { Store } from "./store.js";
-import { validatePlan } from "./validator.js";
+import type { Plan, Store } from "./store.js";
+import { validatePlan, validateSchedule, type Violation } from "./validator.js";
 
 interface SaveBody {
   confirmed: true;
@@ -21,19 +23,21 @@ function parseBody(raw: unknown): SaveBody {
   return { confirmed: true, note: b.note as string | undefined };
 }
 
+/**
+ * The validator, in the backend, on the stops as they are now (H3). A plan with a schedule is checked
+ * with V1-V5 against the data, the caps and total of the group at this moment, and the weather now.
+ * A plan without stops is a PA#2 fixture: only the old total check applies.
+ */
+async function violationsOf(store: Store, deps: Deps, plan: Plan): Promise<Violation[]> {
+  if (!plan.stops) return validatePlan(plan);
+  return validateSchedule(plan.stops, await validationContext(store, deps, plan));
+}
+
 /** POST /plans/:planId/save. See docs/contract/save-plan.md. */
-export function savePlanHandler(store: Store) {
-  return (req: Request, res: Response): void => {
-    // 1. Authentication (stub: X-User-Id header; replaced by real auth later)
-    const userId = req.header("X-User-Id");
-    if (!userId) {
-      throw new ProblemError(
-        401,
-        "unauthenticated",
-        "Authentication required",
-        "Missing X-User-Id.",
-      );
-    }
+export function savePlanHandler(store: Store, deps: Deps, userOf: (req: Request) => string) {
+  return async (req: Request, res: Response): Promise<void> => {
+    // 1. Authentication (bearer token, or the development X-User-Id stub)
+    const userId = userOf(req);
 
     // 2. Plan existence and membership. Non-members get 404 so a plan's existence is not leaked.
     const planId = String(req.params.planId);
@@ -83,19 +87,26 @@ export function savePlanHandler(store: Store) {
 
     // 6. Already saved (with another key): repeating Save is safe and returns the same result.
     // 7. Otherwise the validator must pass before anything is shared.
-    if (plan.status !== "saved") {
-      const violations = validatePlan(plan);
-      if (violations.length > 0) {
-        throw new ProblemError(
-          422,
-          "plan-violates-constraints",
-          "Plan violates constraints",
-          "The validator rejected this plan; it was not saved or shared.",
-          { violations },
-        );
+    // A function, not a comparison: TypeScript would otherwise narrow the status and hide the race.
+    const isSaved = () => plan.status === "saved";
+    if (!isSaved()) {
+      const violations = await violationsOf(store, deps, plan);
+      // Another Save may have finished while the forecast was being read: look again, then decide.
+      if (!isSaved()) {
+        if (violations.length > 0) {
+          throw new ProblemError(
+            422,
+            "plan-violates-constraints",
+            "Plan violates constraints",
+            "The validator rejected this plan; it was not saved or shared.",
+            { violations },
+          );
+        }
+        const group = plan.groupId ? store.groups.get(plan.groupId) : undefined;
+        if (group) plan.memberIds = [...group.memberIds]; // share with everyone in the group now
+        plan.status = "saved";
+        plan.savedAt = new Date().toISOString();
       }
-      plan.status = "saved";
-      plan.savedAt = new Date().toISOString();
     }
 
     const responseBody = {

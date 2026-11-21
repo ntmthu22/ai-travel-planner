@@ -28,8 +28,16 @@
 - Never push directly to `main`; never force-push. (why: PR #1, commit `0198c6a`)
 - Never send names or email addresses to a model, only places and interests.
 - Never let the model read the database or calculate money; it works through the tools only.
+- Never edit `eval.mjs` or the shared dataset to get a better score; the evaluator is not ours to change.
+- Never take a member id from the model's tool arguments; the code decides whose data a tool may read.
+- Never put the model key in a `NEXT_PUBLIC_` or `VITE_` variable, or in any file under `public/`.
+- Never share a draft because a red warning exists; a schedule reaches the group only through Save, and Save re-runs the validator.
+- Never write `toolCalls` or `seconds` into `plans.jsonl` by hand; they must match `tool-log.jsonl`.
 
 ## Where these rules came from
+
+- The last five "Never" lines were added in PA#3 from the rubric's "Catching your assistant" list, not
+  from an incident of ours. They are rules we agree with, written before we broke them.
 
 - "Never edit a test to make a check pass": in PR #2 we broke the contract on purpose (404 became 403
   for non-members). CI went red in 3 tests; we fixed the code in commit `da72e30` and left the tests and

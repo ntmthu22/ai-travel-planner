@@ -1,0 +1,165 @@
+:root {
+  --bg: #fafaf7;
+  --fg: #1d2330;
+  --muted: #5d6677;
+  --card: #fff;
+  --line: #d9dce3;
+  --accent: #0b6e4f;
+  --danger: #b3261e;
+  --danger-bg: #fdecea;
+  --warn-bg: #fff4d6;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #14171f;
+    --fg: #e8eaf0;
+    --muted: #a0a8b8;
+    --card: #1d212c;
+    --line: #333a4a;
+    --accent: #4fc79b;
+    --danger: #ff8a80;
+    --danger-bg: #3a1d1b;
+    --warn-bg: #3a3118;
+  }
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  font:
+    16px/1.5 system-ui,
+    sans-serif;
+  background: var(--bg);
+  color: var(--fg);
+}
+header,
+main,
+footer {
+  max-width: 60rem;
+  margin: 0 auto;
+  padding: 0.75rem 1rem;
+}
+header {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1rem;
+  align-items: center;
+}
+h1 {
+  font-size: 1.25rem;
+  margin: 0;
+}
+h2 {
+  font-size: 1.1rem;
+  margin: 1.25rem 0 0.5rem;
+}
+nav {
+  display: flex;
+  gap: 0.25rem;
+  flex-wrap: wrap;
+  flex: 1;
+}
+a {
+  color: var(--accent);
+}
+button,
+input,
+select {
+  font: inherit;
+  color: inherit;
+}
+button {
+  padding: 0.4rem 0.8rem;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: var(--card);
+  cursor: pointer;
+}
+button.primary {
+  background: var(--accent);
+  color: #fff;
+  border-color: var(--accent);
+}
+button.on {
+  outline: 2px solid var(--accent);
+}
+button[aria-current="page"] {
+  background: var(--accent);
+  color: #fff;
+}
+input,
+select {
+  padding: 0.35rem 0.5rem;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: var(--card);
+  max-width: 100%;
+}
+label {
+  display: inline-flex;
+  flex-direction: column;
+  font-size: 0.85rem;
+  color: var(--muted);
+  gap: 0.15rem;
+  margin: 0 0.75rem 0.5rem 0;
+}
+.card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 0.75rem 1rem;
+  margin: 0.5rem 0;
+}
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  align-items: center;
+}
+.muted {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+#status:not(:empty) {
+  max-width: 60rem;
+  margin: 0 auto;
+  padding: 0.6rem 1rem;
+  background: var(--danger-bg);
+  color: var(--danger);
+  border-radius: 6px;
+}
+#status.ok {
+  background: var(--card);
+  color: var(--accent);
+}
+.red {
+  background: var(--danger-bg);
+  color: var(--danger);
+  border: 1px solid var(--danger);
+  border-radius: 8px;
+  padding: 0.6rem 1rem;
+  margin: 0.5rem 0;
+}
+.warn {
+  background: var(--warn-bg);
+  border-radius: 8px;
+  padding: 0.6rem 1rem;
+  margin: 0.5rem 0;
+}
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+th,
+td {
+  text-align: left;
+  padding: 0.25rem 0.5rem;
+  border-bottom: 1px solid var(--line);
+}
+footer {
+  color: var(--muted);
+  font-size: 0.85rem;
+  border-top: 1px solid var(--line);
+  margin-top: 2rem;
+}
