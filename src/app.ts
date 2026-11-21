@@ -1,3 +1,4 @@
+import { fileURLToPath } from "node:url";
 import express, { type NextFunction, type Request, type Response } from "express";
 import type { Clock, Limits, Model } from "./agent.js";
 import { authenticate, loginHandler } from "./auth.js";
@@ -59,7 +60,23 @@ export function createApp(store: Store, overrides: Partial<Deps> = {}) {
   const userOf = (req: Request) => authenticate(req, store, deps.devAuth);
   const app = express();
   app.disable("x-powered-by");
+  app.use((_req, res, next) => {
+    res.setHeader(
+      "Content-Security-Policy",
+      "default-src 'none'; script-src 'self'; style-src 'self'; connect-src 'self'; img-src 'self' data:; base-uri 'none'; form-action 'self'; frame-ancestors 'none'",
+    );
+    res.setHeader("X-Content-Type-Options", "nosniff");
+    res.setHeader("Referrer-Policy", "no-referrer");
+    next();
+  });
   app.use(express.json({ limit: "100kb" }));
+  // Only the files of public/ are served; nothing else on disk is reachable.
+  app.use(
+    express.static(fileURLToPath(new URL("../public", import.meta.url)), {
+      dotfiles: "ignore",
+      index: "index.html",
+    }),
+  );
 
   app.post("/auth/login", wrap(loginHandler(store)));
 
